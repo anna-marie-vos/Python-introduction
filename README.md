@@ -5,5 +5,5 @@
 * or: python --version
 
 ### terminal inline testing
-* to test some code in the terminal type: python
+* to test some code in the terminal type: python3
 * to exit type: ctrl+D
