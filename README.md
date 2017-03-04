@@ -23,3 +23,6 @@
 * it import specific function from a module: from module_name import function_name
 * example: from math inport factoral
 * to rename a function during import: from math import factorial as fac
+
+### Making exportable modules/scripts from functions:
+* if __name__ == '__main__': fetch_words()
