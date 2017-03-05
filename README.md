@@ -41,6 +41,7 @@
 * this will show all the usefull information on all the functions. Pretty cool
 
 ## to execute in terminal
+* in your file make sure you've got "#! /usr/bin/env python3" on the top of your file
 * write in the terminal: chmod +x fileName.py
 * and then write in the terminal: ./fileName.py inputHere
 * and that will also run the file in the terminal
