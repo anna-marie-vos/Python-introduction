@@ -18,7 +18,8 @@
 * an extra empty line shows that the function / code block is complete
 * need help on a module? type: help(module_name)
 * to exit help type: Q
-#### Import modules in terminal
+
+### Import modules in terminal
 * import modules: import module_name
 * it import specific function from a module: from module_name import function_name
 * example: from math inport factoral
