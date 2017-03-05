@@ -18,8 +18,31 @@
 * an extra empty line shows that the function / code block is complete
 * need help on a module? type: help(module_name)
 * to exit help type: Q
-#### Import modules in terminal
+
+### Import modules in terminal
 * import modules: import module_name
 * it import specific function from a module: from module_name import function_name
 * example: from math inport factoral
 * to rename a function during import: from math import factorial as fac
+* to import multiple functions from a module: from module_name import (function_name,function_name2)
+* to import everything from a module: from words import *
+
+### Making exportable modules/scripts from functions:
+* if __name__ == '__main__': fetch_words()
+
+## advanced command line arguments parsing go to:
+* python Standard Library: argparse
+* of docopt
+* checkout sys.argv[1]
+
+## docstrings
+* use """words words words""" in your code.
+* this lets you add help file comments in the commandline
+* in REPL import the module and then type: help(module_name)
+* this will show all the usefull information on all the functions. Pretty cool
+
+## to execute in terminal
+* in your file make sure you've got "#! /usr/bin/env python3" on the top of your file
+* write in the terminal: chmod +x fileName.py
+* and then write in the terminal: ./fileName.py inputHere
+* and that will also run the file in the terminal

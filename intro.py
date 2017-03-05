@@ -33,3 +33,9 @@ while True:
     if int(response) % 7 == 0:
         print("you've devided by 7")
         break
+
+# functions work with def
+def square(x):
+    return x * x
+
+print('this is a function',square(5))
