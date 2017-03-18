@@ -50,3 +50,6 @@
 ## To run a simple server
 * In the terminal type: python -m SimpleHTTPServer 3000
 * this will run the local server to port 3000
+
+### Webpages to take note of:
+* http://www.tutorialspoint.com/python/
