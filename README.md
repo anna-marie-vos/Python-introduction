@@ -46,3 +46,7 @@
 * write in the terminal: chmod +x fileName.py
 * and then write in the terminal: ./fileName.py inputHere
 * and that will also run the file in the terminal
+
+## To run a simple server
+* In the terminal type: python -m SimpleHTTPServer 3000
+* this will run the local server to port 3000
