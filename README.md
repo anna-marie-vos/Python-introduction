@@ -5,6 +5,7 @@
 * it's already installed to check the version type: python3 --version
 * or: python --version
 * to find out which python to use type(in the terminal, this will output '/usr/bin/python3'): which python3
+* to install pip (It's like npm) type in terminal: sudo apt-get install python3-pip
 
 ### terminal inline coding
 * to run a python file in the terminall type: python fileName.py
@@ -46,3 +47,13 @@
 * write in the terminal: chmod +x fileName.py
 * and then write in the terminal: ./fileName.py inputHere
 * and that will also run the file in the terminal
+
+## Using pip flask to create a web server
+* Tutorial: https://code.tutsplus.com/tutorials/creating-a-web-app-from-scratch-using-python-flask-and-mysql--cms-22972
+* go to the flask website: http://flask.pocoo.org/docs/0.12/installation/
+* I don't think you actually need the virtualenv
+* type in terminal: sudo apt-get install python-virtualenv
+* once in the project folder run: virtualenv venv
+* now when your working on a specif project you just type in terminal: . venv/bin/activate
+* if you want to exit the virtual envirnoment just type: deactivate
+* Install Flask: sudo pip install Flask
