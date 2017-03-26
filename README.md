@@ -103,7 +103,7 @@
 
 * to Query the table write (this will show nothing for now): SELECT * FROM tbl_user;
 
-* Now create a stored procedure, type in the terminal:
+* Now create a stored procedure called 'sp_createUser', type in the terminal:
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_createUser`(
     IN p_name VARCHAR(20),
