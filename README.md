@@ -48,6 +48,20 @@
 * and then write in the terminal: ./fileName.py inputHere
 * and that will also run the file in the terminal
 
+## To run a simple server
+* In the terminal type: python -m SimpleHTTPServer 3000
+* this will run the local server to port 3000
+
+### Webpages to take note of:
+* http://www.tutorialspoint.com/python/
+
+### Data types:
+* list are the same as arrays. They are defined as: list = ['item1','item2']
+* to retrieve items from a list: list[0] or list[1] this will retrieve 'item1' and 'item2' respectively
+* tuples are immutible lists and are defined as list =('item1', 'item2') items are retrieved the same way as lists
+* directory = object
+* dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'}
+
 ## Using pip flask to create a web server
 * Tutorial: https://code.tutsplus.com/tutorials/creating-a-web-app-from-scratch-using-python-flask-and-mysql--cms-22972
 * go to the flask website: http://flask.pocoo.org/docs/0.12/installation/
