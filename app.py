@@ -1,9 +1,22 @@
 #!/usr/bin/env python3
 
 from flask import Flask, render_template, request, json
+from flask.ext.mysql import MySQL
+from werkzeug import generate_password_hash, check_password_hash
 
 
 app = Flask(__name__)
+mysql = MySQL()
+# MySQL configurations
+# dotenv not working yet
+app.config['MYSQL_DATABASE_USER'] = .env.MYSQL_DATABASE_USER
+app.config['MYSQL_DATABASE_PASSWORD'] = .env.MYSQL_DATABASE_PASSWORD
+app.config['MYSQL_DATABASE_DB'] = 'BucketList'
+app.config['MYSQL_DATABASE_HOST'] = 'localhost'
+mysql.init_app(app)
+
+conn = mysql.connect()
+cursor = conn.cursor()
 
 #Basic route
 @app.route('/')

@@ -88,6 +88,9 @@
 * to uninstall: sudo apt-get remove mysql-workbench
 * then: sudo apt-get purge mysql-workbench
 
+## to use a .env file
+* install the dotenv module: sudo pip install dotenv
+
 ## Using MySQL
 * to make database: sudo mysql -u root -p
 * to get help file type in terminal: 'help;' or '\h' for help. Type '\c' to clear current input statement
@@ -133,3 +136,5 @@ BEGIN
     END IF;
 END$$
 DELIMITER ;
+
+* To connect to the MySql database you need to install flask-mysql module: sudo pip install flask-mysql
