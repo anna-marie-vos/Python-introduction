@@ -57,3 +57,79 @@
 * now when your working on a specif project you just type in terminal: . venv/bin/activate
 * if you want to exit the virtual envirnoment just type: deactivate
 * Install Flask: sudo pip install Flask
+
+## Installing MySQL
+* website: https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-16-04
+* First update the defualt package byt typing in the terminal : sudo apt-get update
+* Then install mySQL by typing in the terminal: sudo apt-get install mysql-server
+* To set the security on mysql type in the terminal: sudo mysql_secure_installation
+* note: you might need to initialise the database (it will abort if you didn't need to) type in terminal: mysqld --initialize
+* To test the MySQL is working, type in terminal: systemctl status mysql.service
+* If it didn't start on it's own, type in terminal (I used the commmand above): sudo /etc/init.d/mysql start
+* you can also test it by connecting to the db by using the admin tool(-u = root and -p = password): mysqladmin -p -u root version
+* to stop MySQL, type in terminal(I just hit ctrl+c in the terminal):  sudo /etc/init.d/mysql stop
+* to uninstall MySQL: sudo apt-get purge mysql*
+* then: sudo apt-get autoremove
+* then: sudo apt-get autoclean
+
+## Easy to use interface for MySQL:
+* You can use MySQL Workbench: https://www.mysql.com/products/workbench/
+* note: it can migrate other databases to mysql. It's also works with cloud and other exciting things.
+* Another one is HeidiSQL:  https://www.heidisql.com/
+* Another is phpMyAdmin: https://www.phpmyadmin.net/
+* and another lightweight one is adminer: https://www.adminer.org/
+* there is also one on ubuntu called mysql-query-browser: https://apps.ubuntu.com/cat/applications/natty/mysql-query-browser/
+* adminer didn't work and heidi works with ubuntu wine (microsoft)
+
+## to use Workbench
+* in the terminal type: sudo apt-get update
+* then: sudo apt-get install mysql-workbench
+* then go to ubuntu installer and search for workbench click install.
+* to uninstall: sudo apt-get remove mysql-workbench
+* then: sudo apt-get purge mysql-workbench
+
+## Using MySQL
+* to make database: sudo mysql -u root -p
+* to get help file type in terminal: 'help;' or '\h' for help. Type '\c' to clear current input statement
+* to quit type: \q
+* to create a database type in terminal(it shoud show mysql> I've called the database BucketList): CREATE DATABASE <databaseName>;
+* to specify which database to use type in terminal: USE BucketList;
+* CREATE TABLE `BucketList`.`tbl_user` (
+  `user_id` BIGINT UNIQUE AUTO_INCREMENT,
+  `user_name` VARCHAR(45) NULL,
+  `user_username` VARCHAR(45) NULL,
+  `user_password` VARCHAR(45) NULL,
+  PRIMARY KEY (`user_id`));
+
+* to Query the table write (this will show nothing for now): SELECT * FROM tbl_user;
+
+* Now create a stored procedure, type in the terminal:
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_createUser`(
+    IN p_name VARCHAR(20),
+    IN p_username VARCHAR(20),
+    IN p_password VARCHAR(20)
+)
+BEGIN
+    if ( select exists (select 1 from tbl_user where user_username = p_username) ) THEN
+
+        select 'Username Exists !!';
+
+    ELSE
+
+        insert into tbl_user
+        (
+            user_name,
+            user_username,
+            user_password
+        )
+        values
+        (
+            p_name,
+            p_username,
+            p_password
+        );
+
+    END IF;
+END$$
+DELIMITER ;
