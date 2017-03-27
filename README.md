@@ -162,4 +162,6 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_createUser`(
 END$$
 DELIMITER ;
 
+## Using flask-mysql
 * To connect to the MySql database you need to install flask-mysql module: sudo pip install flask-mysql
+* also read the docs here: https://flask-mysql.readthedocs.io/en/latest/#
