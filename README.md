@@ -106,12 +106,23 @@
 * install the dotenv module: sudo pip install dotenv
 
 ## Using MySQL
-* to make database: sudo mysql -u root -p
+* first make sure MySQL has started up: sudo /etc/init.d/mysql start
+* to make go to MySQL interface: sudo mysql -u root -p
 * to get help file type in terminal: 'help;' or '\h' for help. Type '\c' to clear current input statement
 * to quit type: \q
 * to create a database type in terminal(it shoud show mysql> I've called the database BucketList): CREATE DATABASE <databaseName>;
-* to specify which database to use type in terminal: USE BucketList;
-* CREATE TABLE `BucketList`.`tbl_user` (
+* To select or switch to an existing database type: USE <databaseName>;
+* To show all databases type: SHOW DATABASES;
+* To show all tables type: SHOW TABLES;
+* To show the columns of a table type: SHOW COLUMNS FROM <tableName>;
+* To delete a database type: DROP DATABASE IF EXISTS <databaseName>;
+* To delete a table type: DROP TABLE IF EXISTS <tableName>;
+* To alter a table checkout the code: https://dev.mysql.com/doc/refman/5.7/en/alter-table.html
+* To show stored procedures: SHOW PROCEDURE STATUS WHERE Db = '<databaseName>';
+* for an easier way to display stored procedures type: select name, type from mysql.proc where db = database() order by type, name;
+* to show a stored procdure code: SHOW CREATE PROCEDURE <storedProcedureName>;
+
+* CREATE TABLE `bucketList`.`users` (
   `user_id` BIGINT UNIQUE AUTO_INCREMENT,
   `user_name` VARCHAR(45) NULL,
   `user_username` VARCHAR(45) NULL,
@@ -123,12 +134,12 @@
 * Now create a stored procedure called 'sp_createUser', type in the terminal:
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_createUser`(
-    IN p_name VARCHAR(20),
-    IN p_username VARCHAR(20),
-    IN p_password VARCHAR(20)
-)
-BEGIN
-    if ( select exists (select 1 from tbl_user where user_username = p_username) ) THEN
+  IN p_name VARCHAR(20),
+  IN p_username VARCHAR(20),
+  IN p_password VARCHAR(20)
+  )
+  BEGIN
+  if ( select exists (select 1 from tbl_user where user_username = p_username) ) THEN
 
         select 'Username Exists !!';
 
