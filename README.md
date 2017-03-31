@@ -29,7 +29,7 @@
 * to import everything from a module: from words import *
 
 ### Making exportable modules/scripts from functions:
-* if __name__ == '__main__': fetch_words()
+* `if __name__ == '__main__': fetch_words()`
 
 ## advanced command line arguments parsing go to:
 * python Standard Library: argparse
@@ -122,17 +122,17 @@
 * for an easier way to display stored procedures type: select name, type from mysql.proc where db = database() order by type, name;
 * to show a stored procdure code: SHOW CREATE PROCEDURE <storedProcedureName>;
 
-* CREATE TABLE `bucketList`.`users` (
+* `CREATE TABLE `bucketList`.`users` (
   `user_id` BIGINT UNIQUE AUTO_INCREMENT,
   `user_name` VARCHAR(45) NULL,
   `user_username` VARCHAR(45) NULL,
   `user_password` VARCHAR(45) NULL,
-  PRIMARY KEY (`user_id`));
+  PRIMARY KEY (`user_id`));`
 
 * to Query the table write (this will show nothing for now): SELECT * FROM tbl_user;
 
 * Now create a stored procedure called 'sp_createUser', type in the terminal:
-DELIMITER $$
+`DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_createUser`(
   IN p_name VARCHAR(20),
   IN p_username VARCHAR(20),
@@ -160,7 +160,7 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `sp_createUser`(
 
     END IF;
 END$$
-DELIMITER ;
+DELIMITER ;`
 
 ## Using flask-mysql
 * To connect to the MySql database you need to install flask-mysql module: sudo pip install flask-mysql
