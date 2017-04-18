@@ -6,6 +6,9 @@
 * or: python --version
 * to find out which python to use type(in the terminal, this will output '/usr/bin/python3'): which python3
 * to install pip (It's like npm) type in terminal: sudo apt-get install python3-pip
+* install jupyter: sudo pip3 install jupyter
+* to start a localhost session in jupyter: jupyter notebook
+* install pandas: sudo pip3 install pandas
 
 ### terminal inline coding
 * to run a python file in the terminall type: python fileName.py
