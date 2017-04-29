@@ -24,3 +24,4 @@ and type:
 * to add a column and fill it with data: `df7["continent"] = df7.shape[0]*["North America"]`
 * To see the shape of your dataframe: `df7.shape` this will output the (5,7) <<this is a tuple, which means 5 rows and 7 columns
 * There is no easy way to add a row, so transpose your table and then add a columns and transpose again: df7.T
+* to get coordinates you need to install geopy: `pip3 install geopy`
