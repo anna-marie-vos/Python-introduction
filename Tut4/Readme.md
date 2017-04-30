@@ -12,4 +12,6 @@
 * to select various items use: `image[0:2]` or `image[:, 2:4]` or `image[2]`
 * to iterate through an array: `for i in image: print(i)`
 * to iterate through all the array numbers one by one: `for i in image.flat: print(i)`
-* to concatonate arrays: `concatImage = numpy.hstack((image1, image2))`
+* to concatonate arrays: `concatImage = numpy.hstack((image1, image2))` or `concatImage = numpy.vstack((image1, image2))`
+* to split arrays horisontally: `splitArr = numpy.hsplit(concatImage,5)`, with the number 5 being the amount of new arrays.
+* to split arrays vertically: `splitArr = numpy.vsplit(concatImage,2)`
