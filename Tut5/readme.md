@@ -5,4 +5,5 @@
 * `dir(folium)` , this lists the available functions
 * `map = folium.Map(location = [45.372,-121.697],zoom_start=12)`
 * To creat html map: `map.save('test.html')`
-* to understand zip in python go to: http://stackoverflow.com/questions/13704860/zip-lists-in-python 
+* to understand zip in python go to: http://stackoverflow.com/questions/13704860/zip-lists-in-python
+* checkout QGIS to convert shape files to geojson
