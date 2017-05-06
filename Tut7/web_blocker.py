@@ -11,7 +11,7 @@ currentDay = dt.now().day
 currentHour = dt.now().hour
 
 while True:
-    if dt(currentYear,currentMonth,currentDay, 8) < dt.now() < dt(currentYear,currentMonth,currentDay, 9):
+    if dt(currentYear,currentMonth,currentDay, 8) < dt.now() < dt(currentYear,currentMonth,currentDay, 16):
         print("Working" )
         with open(hosts_path,'r+') as file:
             content = file.read()
