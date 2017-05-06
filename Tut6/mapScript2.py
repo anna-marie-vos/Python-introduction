@@ -19,6 +19,8 @@ def newColor(elevation):
         return 'red'
 
 for lat, lon, name, elev in zip(df['LAT'],df['LON'],df['NAME'], df['ELEV']):
-    folium.Marker(location = [lat,lon],popup = name,icon=folium.Icon(newColor(elev))).add_to(map)
+    map.add_child(folium.Marker(location=[lat,lon], icon=folium.Icon(color=newColor(elev),icon_color='green')))
+
+
 
 map.save('test2.html')
