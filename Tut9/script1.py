@@ -4,7 +4,8 @@ window = Tk()
 
 def km_to_miles():
     print(e1_value.get())
-    # t1.insert(END)
+    miles = float(e1_value.get())*1.6
+    t1.insert(END,miles) #new text is added at the END
 
 b1 = Button(window, text="Execute", command = km_to_miles)
 # .grid method and .pack method does the same thing
