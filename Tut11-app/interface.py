@@ -35,6 +35,8 @@ ISBNEntry.grid(row = 1, column = 3)
 list1 = Listbox(window, height = 6, width = 35)
 list1.grid(row = 2, column = 0, rowspan = 6, columnspan = 2)
 
+list1.bind('<<ListboxSelect>>', FE.getSelectedRow) #this is to select something from a listbox
+
 scroller = Scrollbar(window)
 scroller.grid(row = 2,column = 2, rowspan = 6)
 
@@ -44,16 +46,16 @@ scroller.configure(command = list1.yview)
 viewAllBtn = Button(window, text = "View all", width = 12, command = FE.viewCommand)
 viewAllBtn.grid(row = 2, column = 3)
 
-searchBtn = Button(window, text = "Search Entry", width = 12)
+searchBtn = Button(window, text = "Search Entry", width = 12, command = FE.searchCommand)
 searchBtn.grid(row = 3, column = 3)
 
-addBtn = Button(window, text = "Add Entry", width = 12)
+addBtn = Button(window, text = "Add Entry", width = 12, command = FE.addBook)
 addBtn.grid(row =4, column = 3)
 
 updateBtn = Button(window, text = "Update", width = 12)
 updateBtn.grid(row = 5, column = 3)
 
-deleteBtn = Button(window, text = "Delete", width = 12)
+deleteBtn = Button(window, text = "Delete", width = 12, command = FE.deleteItem)
 deleteBtn.grid(row = 6, column = 3)
 
 closeBtn = Button(window, text = "Close", width = 12)
