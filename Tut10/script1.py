@@ -35,4 +35,22 @@ def viewDataBase():
     conn.close()
     return rows
 
+def deleteRow(deletedItem):
+    conn = db.connect('lite.db')
+    cur = conn.cursor()
+    cur.execute("DELETE FROM store WHERE item = ?", (deletedItem,)) #dont forget the comma
+    conn.commit()
+    conn.close()
+
+# deleteRow("Wine Glass")
+
+def updateRow(updatedItem, newAmount, newPrice):
+    conn = db.connect('lite.db')
+    cur = conn.cursor()
+    cur.execute("UPDATE store SET quantity = ?, price = ? WHERE item = ?", ( newAmount, newPrice, updatedItem)) #dont forget the comma
+    conn.commit()
+    conn.close()
+
+updateRow('water glas', 15, 10)
+
 print(viewDataBase())
