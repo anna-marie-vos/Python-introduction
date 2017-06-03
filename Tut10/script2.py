@@ -12,8 +12,20 @@ def createTable():
 createTable()
 
 def insertData(item, quantity, price):
-    conn = db.connect("lite.db")
+    conn = db.connect("dbname = 'tutorialdb' user='postgres' password='postgres' host='localhost' port=5432")
     cur = conn.cursor()
-    cur.execute("INSERT INTO store VALUES(?,?,?)", (item, quantity, price))
+    cur.execute("INSERT INTO store VALUES(%s,%s,%s)", (item, quantity, price))
     conn.commit()
     conn.close()
+
+# insertData('mango', 18, 4.5)
+
+def viewDataBase():
+    conn = db.connect("dbname = 'tutorialdb' user='postgres' password='postgres' host='localhost' port=5432")
+    cur = conn.cursor()
+    cur.execute("SELECT * FROM store")
+    rows = cur.fetchall()
+    conn.close()
+    return rows
+
+print(viewDataBase())

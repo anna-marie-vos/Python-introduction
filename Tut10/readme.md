@@ -20,9 +20,11 @@ sudo apt-get update`
 * `ALTER USER postgres with encrypted password 'your_password';`
 * USER = postgres password = postgres
 * to use psql type: `sudo -u postgres psql`
+* to use psql type: `sudo -u postgres psql existigdatabaseName`
 * in psql to create a database: `create database name;`
 * to switch to database: `\connect databaseName;`
-* to view table: `\x`& `\d tableName;`
+* to view table: `\d tableName;`
+* to view the rows in a table: `select * from tableName;`
 * \l to show all databases
 * \dt to list all tables
 * \h for help with SQL commands
