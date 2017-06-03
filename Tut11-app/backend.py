@@ -30,9 +30,23 @@ def search(title="", author="", year="", isbn=""):
     conn.close()
     return rows
 
+def delete(id):
+    conn = db.connect("books.db")
+    cur = conn.cursor()
+    cur.execute("DELETE FROM book WHERE id = ?", (id,))
+    conn.commit()
+    conn.close()
+
+def update(id,title, author, year, isbn):
+    conn = db.connect("books.db")
+    cur = conn.cursor()
+    cur.execute("UPDATE book SET title=?, author=?,year=?,isbn=? WHERE id = ?", (title, author, year, isbn, id))
+    conn.commit()
+    conn.close()
+
 connect()
-insert("The air","Jane Smith",1925, 5523232)
-
-print(view())
-
-print(search(author ="John Smith"))
+# insert("The air","Jane Smith",1925, 5523232)
+# print(search(author ="John Smith"))
+# delete(4)
+# update(3, "The Moon", "Jon Joe", 11232, 122233333)
+# print(view())

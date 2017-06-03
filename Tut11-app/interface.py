@@ -1,5 +1,6 @@
 from tkinter import *
 from backend import *
+import frontend as FE
 
 window = Tk()
 
@@ -40,7 +41,7 @@ scroller.grid(row = 2,column = 2, rowspan = 6)
 list1.configure(yscrollcommand = scroller.set)
 scroller.configure(command = list1.yview)
 
-viewAllBtn = Button(window, text = "View all", width = 12)
+viewAllBtn = Button(window, text = "View all", width = 12, command = FE.viewCommand)
 viewAllBtn.grid(row = 2, column = 3)
 
 searchBtn = Button(window, text = "Search Entry", width = 12)
