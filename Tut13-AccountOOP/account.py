@@ -1,4 +1,9 @@
 class Account:
+    """the Account class has
+    withdraw (amount)
+    deposit (amount)
+    commit() which saves it to the txt file
+    """
 
     def __init__(self,filepath):
         self.filepath = filepath
@@ -18,16 +23,25 @@ class Account:
             file.write(str(self.balance))
 
 class CheckAccount(Account):
+    """this class has a transfer method that uses the amount as an input"""
 
-    def __init__(self, filepath, fee):
+    type ="check account" # this is an attribute
+
+    def __init__(self, filepath, fee): #this is a constructor
         self.fee = fee
         Account.__init__(self,filepath)
 
-    def transfer(self, amount):
+    def transfer(self, amount): # this is a method
         self.balance -=( amount + self.fee)
         self.commit()
 
-checkAccount = CheckAccount('balance.txt', 1)
+JacksAccount = CheckAccount('jack.txt', 1)
 # checkAccount.deposit(100)
-checkAccount.transfer(110)
-print(checkAccount.balance) # we defined balance as a instance variable / property of the class
+JacksAccount.transfer(60)
+print(JacksAccount.balance) # we defined balance as a instance variable / property of the class
+
+JohnsAccount = CheckAccount('john.txt', 1)
+# checkAccount.deposit(100)
+JohnsAccount.transfer(50)
+print(JohnsAccount.balance)
+print(JohnsAccount.__doc__)
