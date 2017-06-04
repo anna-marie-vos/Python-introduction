@@ -4,6 +4,8 @@ import frontend as FE
 
 window = Tk()
 
+window.wm_title("Bookstore")
+
 titleLabel = Label(window,text = 'Title:')
 titleLabel.grid(row = 0, column = 0)
 
@@ -52,13 +54,13 @@ searchBtn.grid(row = 3, column = 3)
 addBtn = Button(window, text = "Add Entry", width = 12, command = FE.addBook)
 addBtn.grid(row =4, column = 3)
 
-updateBtn = Button(window, text = "Update", width = 12)
+updateBtn = Button(window, text = "Update", width = 12, command = FE.updateRow)
 updateBtn.grid(row = 5, column = 3)
 
 deleteBtn = Button(window, text = "Delete", width = 12, command = FE.deleteItem)
 deleteBtn.grid(row = 6, column = 3)
 
-closeBtn = Button(window, text = "Close", width = 12)
+closeBtn = Button(window, text = "Close", width = 12, command = window.destroy)
 closeBtn.grid(row = 7, column = 3)
 
 

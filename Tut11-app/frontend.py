@@ -36,6 +36,14 @@ def getSelectedRow(event):
     interface.yearEntry.insert(END, selectedRow[3])
     interface.ISBNEntry.insert(END, selectedRow[4])
 
+def updateRow():
+    id = selectedRow[0]
+    title = interface.titleInput.get()
+    author = interface.autherInput.get()
+    year = interface.yearInput.get()
+    isbn = interface.ISBNInput.get()
+    BE.update(id,title,author,year,isbn)
+    viewCommand()
 
 def deleteItem():
     id = selectedRow[0]
