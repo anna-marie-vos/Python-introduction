@@ -17,11 +17,17 @@ class Account:
         with open(self.filepath, 'w') as file:
             file.write(str(self.balance))
 
+class CheckAccount(Account):
 
-account = Account('balance.txt') #this makes an instancce of the Account class
+    def __init__(self, filepath, fee):
+        self.fee = fee
+        Account.__init__(self,filepath)
 
-print(account.balance)
-account.withdraw(50)
-print(account.balance)
-account.deposit(100)
-print(account.balance)
+    def transfer(self, amount):
+        self.balance -=( amount + self.fee)
+        self.commit()
+
+checkAccount = CheckAccount('balance.txt', 1)
+# checkAccount.deposit(100)
+checkAccount.transfer(110)
+print(checkAccount.balance) # we defined balance as a instance variable / property of the class
