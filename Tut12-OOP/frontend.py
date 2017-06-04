@@ -1,6 +1,8 @@
 from tkinter import *
-import backend as BE
+from backend import Database
 import interface as interface
+
+BE = Database()
 
 def viewCommand():
     interface.list1.delete(0,END)

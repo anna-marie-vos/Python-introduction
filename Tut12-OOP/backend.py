@@ -1,6 +1,7 @@
 import sqlite3 as db
 
-    def connect():
+class Database:
+    def __init__(self):
         conn = db.connect("books.db")
         cur = conn.cursor()
         cur.execute("CREATE TABLE IF NOT EXISTS book (id INTEGER PRIMARY KEY, title text, author text, year INTEGER, isbn INTEGER)")
@@ -44,7 +45,6 @@ import sqlite3 as db
         conn.commit()
         conn.close()
 
-    connect()
 # insert("The air","Jane Smith",1925, 5523232)
 # print(search(author ="John Smith"))
 # delete(4)

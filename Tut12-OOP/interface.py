@@ -1,5 +1,4 @@
 from tkinter import *
-from backend import *
 import frontend as FE
 
 window = Tk()
