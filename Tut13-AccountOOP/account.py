@@ -36,12 +36,10 @@ class CheckAccount(Account):
         self.commit()
 
 JacksAccount = CheckAccount('jack.txt', 1)
-# checkAccount.deposit(100)
 JacksAccount.transfer(60)
 print(JacksAccount.balance) # we defined balance as a instance variable / property of the class
 
 JohnsAccount = CheckAccount('john.txt', 1)
-# checkAccount.deposit(100)
 JohnsAccount.transfer(50)
 print(JohnsAccount.balance)
 print(JohnsAccount.__doc__)
