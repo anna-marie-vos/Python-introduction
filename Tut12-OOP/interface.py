@@ -1,6 +1,7 @@
 from tkinter import *
-import frontend as FE
+from frontend import Frontend
 
+FE = Frontend()
 window = Tk()
 
 window.wm_title("Bookstore")
