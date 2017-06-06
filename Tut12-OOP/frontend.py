@@ -1,7 +1,9 @@
 from tkinter import *
 from backend import Database
 import interface as interface
+from docx import Document
 
+d = Document()
 BE = Database()
 
 class Frontend:
@@ -52,3 +54,16 @@ class Frontend:
         id = selectedRow[0]
         BE.delete(id)
         self.viewCommand()
+
+    def convertToWord(self):
+        d.add_heading('Books')
+        for row in BE.view():
+            titleHeading = 'Title: ', str(row[1])
+            AutherPara = 'Auther: ', str(row[2])
+            publishedPara = 'Published in : ', str(row[3])
+            ISBNPara = 'ISBN number: ', str(row[3])
+            d.add_heading(titleHeading, 2)
+            d.add_paragraph(AutherPara)
+            d.add_paragraph(publishedPara)
+            d.add_paragraph(ISBNPara)
+        d.save('books.docx')

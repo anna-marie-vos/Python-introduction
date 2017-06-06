@@ -7,6 +7,7 @@ print(img) # it is a an array
 print(img.shape) # shape is the amount of arrays in arrays
 print(img.ndim) # how many dimensions
 
-cv2.imshow('galaxy.jpg',img)
-cv2.waitKey(2000)
+resizedImage = cv2.resize(img,(500,1000))
+cv2.imshow('galaxy.jpg',resizedImage)
+cv2.waitKey(3000)
 cv2.destroyAllWindows()

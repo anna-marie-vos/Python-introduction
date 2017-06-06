@@ -34,13 +34,13 @@ ISBNInput = StringVar()
 ISBNEntry = Entry(window, textvariable = ISBNInput)
 ISBNEntry.grid(row = 1, column = 3)
 
-list1 = Listbox(window, height = 6, width = 35)
-list1.grid(row = 2, column = 0, rowspan = 6, columnspan = 2)
+list1 = Listbox(window, height = 8, width = 35)
+list1.grid(row = 2, column = 0, rowspan = 8, columnspan = 2)
 
 list1.bind('<<ListboxSelect>>', FE.getSelectedRow) #this is to select something from a listbox
 
 scroller = Scrollbar(window)
-scroller.grid(row = 2,column = 2, rowspan = 6)
+scroller.grid(row = 2,column = 2, rowspan = 7)
 
 list1.configure(yscrollcommand = scroller.set)
 scroller.configure(command = list1.yview)
@@ -60,8 +60,10 @@ updateBtn.grid(row = 5, column = 3)
 deleteBtn = Button(window, text = "Delete", width = 12, command = FE.deleteItem)
 deleteBtn.grid(row = 6, column = 3)
 
-closeBtn = Button(window, text = "Close", width = 12, command = window.destroy)
-closeBtn.grid(row = 7, column = 3)
+writeToWordBtn = Button(window, text = "Convert to Word", width = 12,command = FE.convertToWord)
+writeToWordBtn.grid(row = 7, column = 3)
 
+closeBtn = Button(window, text = "Close", width = 12, command = window.destroy)
+closeBtn.grid(row = 8, column = 3)
 
 window.mainloop()
