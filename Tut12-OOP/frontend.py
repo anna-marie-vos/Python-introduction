@@ -61,7 +61,7 @@ class Frontend:
             titleHeading = 'Title: ', str(row[1])
             AutherPara = 'Auther: ', str(row[2])
             publishedPara = 'Published in : ', str(row[3])
-            ISBNPara = 'ISBN number: ', str(row[3])
+            ISBNPara = 'ISBN number: ', str(row[4])
             d.add_heading(titleHeading, 2)
             d.add_paragraph(AutherPara)
             d.add_paragraph(publishedPara)
